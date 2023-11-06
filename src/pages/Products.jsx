@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
+import "boostrap/dist/css/boostrap.css";
 
 const Products = ({ titulo }) => {
 
@@ -13,6 +15,22 @@ const Products = ({ titulo }) => {
     return (() => {
         <main>
             <h1>{titulo}</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        productos.map((producto=>(
+                            
+                        ))
+                    }
+                </tbody>
+            </table>
         </main>
     })
 } 
