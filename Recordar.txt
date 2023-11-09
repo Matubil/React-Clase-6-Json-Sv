@@ -1,0 +1,11 @@
+para hacer el "backend" y tener unos archivos con los cuales leer
+abrir la carpeta donde esta mi json con los productos, en este caso
+C:\Users\matias\Desktop\Super Repos\React 6\clase-seis\server , o sea, donde puedo acceder a mi
+json con los productos
+
+primero habria que instalar json-server
+npm i -g json-server
+
+json-server --watch ./productos.json --port 3001
+
+ahi le estariamos diciendo que ese seria nuestro "backend" y que en el http://localhost:3001/productos va a estar los datos
