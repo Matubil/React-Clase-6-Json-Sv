@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.css"
 import Products from './pages/Products';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
+import Editor from './pages/Editor';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             {/* Lo que este dentro de Routes, se renderiza condicionalmente, dependiendo de la url que aparece en el navegador */}
             <Route path='/' Component={Home}/> {/* esta forma no sirve para pasar props usando Component, entonces hay que pasarle elements*/}
             <Route path='/Products' element={<Products titulo="Pagina de productos"/>}/>{/*Esta es la forma de pasarle props */}
+            <Route path='/Products/:id' element={<Editor/>}/>
             <Route path='/Contact' Component={Contact}/>
           </Routes>
       </main>

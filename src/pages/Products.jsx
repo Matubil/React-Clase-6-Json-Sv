@@ -5,11 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 const Products = ({ titulo, ...restOfProps }) => { //con restOfProps llegan el resto de las cosas del objeto
 
-    let [productos, setProductos] = useState([]); //Inicializamos con un array vacio
+    let [products, setProductos] = useState([]); //Inicializamos con un array vacio
     let navigate = useNavigate();
 
     useEffect(() => {
-        axios.get("http://localhost:3001/productos").then((resp) => {
+        axios.get("http://localhost:3001/products").then((resp) => {
             setProductos(resp.data);
         })
     }, [])
@@ -33,14 +33,14 @@ const Products = ({ titulo, ...restOfProps }) => { //con restOfProps llegan el r
                 </thead>
                 <tbody>
                     {
-                        productos.map((producto) => (
-                            <tr key={producto.nombre}>
-                                <td>{producto.nombre}</td>
-                                <td>{producto.descripcion}</td>
-                                <td>{producto.precio}</td>
+                        products.map((product) => (
+                            <tr key={product.nombre}>
+                                <td>{product.nombre}</td>
+                                <td>{product.descripcion}</td>
+                                <td>{product.precio}</td>
                                 <td>
                                     <button className="btn btn-primary float-end" onClick={()=>
-                                        {navigate(`/Products/${producto.id}`)}}>
+                                        {navigate(`/Products/${product.id}`)}}>
                                         Editar
                                     </button>
                                 </td>
